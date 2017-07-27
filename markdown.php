@@ -86,6 +86,8 @@ class MarkdownField extends InputField
         'email',
         'image',
         'line',
+        'help', 
+        'fullscreen'
     ];
 
     /**
@@ -131,6 +133,8 @@ class MarkdownField extends InputField
             'link',
             'image',
             'line',
+            'help', 
+            'fullscreen'
         ],
     ];
 
@@ -161,6 +165,10 @@ class MarkdownField extends InputField
         } else {
             $this->translation = include $baseDir . 'en.php';
         }
+        
+        //Remove excluded tools
+        $exclude = c::get('markdown.exclude', array());
+        $this->tools = array_diff($this->tools, $exclude);
     }
 
     /**
