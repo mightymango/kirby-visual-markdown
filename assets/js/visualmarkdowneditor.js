@@ -367,7 +367,7 @@ var VisualMarkdownEditor = function ($, field, $element, options) {
      * @since 1.2.0
      */
     this.generateToolbarItems = function (tools) {
-        var alwaysVisibleItems = ['help', 'fullscreen'];
+        var alwaysVisibleItems = [];
 
         return tools.map(function (tool) {
 
